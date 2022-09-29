@@ -58,11 +58,24 @@ public class Bai2 {
                     System.out.printf("\n Tổng của các phần tử nằm trên đường chéo chính là: %d\n",sum2);
                     break;
                 case 3:
-//                    for (int i = 0; i < rows ; i++) {
-//                        for (int j = 0; j < rows; j++) {
-//
-//                        }
-//                    }
+                    for (int i = 0; i < rows; i++) {
+                        for (int j = 0; j < rows; j++) {
+                            for(int k=0;k<rows;k++) {
+                             if(arr[i][j]<arr[k][j]) {
+                                 int t = arr[i][j];
+                                 arr[i][j]=arr[k][j];
+                                 arr[k][j]=t;
+                                }
+                            }
+                        }
+                    }
+                    for (int i = 0; i < rows; i++) {
+                        for (int j = 0; j < rows; j++) {
+                            System.out.printf("%5d",arr[i][j]);
+                        }
+                        System.out.println("");
+                    }
+                    System.out.println("\n");
                     break;
                 case 4:
                     System.exit(0);
